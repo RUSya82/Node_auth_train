@@ -1,10 +1,12 @@
 import express from 'express';
 import mongoose from "mongoose";
+import router from "./authRouter.js";
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8081;
 
 const app = express();
 app.use(express.json());
+app.use('/auth', router);
 
 const start = async () => {
     try{
